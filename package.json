@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts",
+    "dev": "node --env-file .env --experimental-strip-types --no-warnings --watch src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "type": "module",
   "dependencies": {
     "@fastify/cors": "^11.0.1",
+    "dotenv": "^17.2.0",
     "fastify": "^5.4.0",
     "fastify-type-provider-zod": "^5.0.2",
     "zod": "^4.0.5"

@@ -1,0 +1,5 @@
+services:
+  nlw-agents-pg:
+    image:
+      pgvector
+      
