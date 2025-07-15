@@ -29,7 +29,7 @@ Gerar migrations com base nos schemas criados
 Rodar efetivamente migrations
 
 ```bash
-npx drizzle-kit migrate
+    npx drizzle-kit migrate
 ```
 
 Para ver o CLI do Drizzle
