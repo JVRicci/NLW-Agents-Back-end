@@ -5,14 +5,14 @@ import { db } from "../../db/connection.ts"
 import { schema } from "../../db/schemas/index.ts"
 import { z } from "zod/v4"
 
-export const getRoomQuestions : FastifyPluginCallbackZod = (app) => {
+export const getRoomQuestionRoute : FastifyPluginCallbackZod = (app) => {
     app.get("/rooms/:roomId/questions", {
         schema: {
             params: z.object({
                 roomId: z.string()
             })
         }
-    }    ,
+    },
     async (request) =>{
         const { roomId } = request.params
 
