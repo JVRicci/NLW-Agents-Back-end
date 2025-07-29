@@ -1,4 +1,5 @@
 import { fastify } from "fastify"
+import { fastifyMultipart } from "@fastify/multipart"
 import { sql } from './db/connection.ts'
 import {
     serializerCompiler,
@@ -12,6 +13,7 @@ import { createRoomRoutes } from "./http/routes/create-room.ts"
 import { getRoomQuestionRoute } from "./http/routes/get-room-questions.ts"
 import { createQuestionRoute } from "./http/routes/create-question.ts"
 import { HealthCheckRoutes } from "./http/routes/health.ts"
+import { uploadAudioRoute } from "./http/routes/upload-audio.ts"
 
 
 const app = fastify()
@@ -24,11 +26,16 @@ app.register(fastifyCors, {
     origin: "http://localhost:5173"
 })
 
+// Responsavel por fazer a api a compreender multipart de requisições
+// como por exemplo as requests de upload de áudio
+app.register(fastifyMultipart)
+
 app.register(HealthCheckRoutes)
 app.register(getRoomsRoutes)
 app.register(createRoomRoutes)
 app.register(getRoomQuestionRoute)
 app.register(createQuestionRoute)
+app.register(uploadAudioRoute)
 
 app.addHook("preHandler", async (request, reply) =>{
     console.log(`[${request.method} - ${request.url}]`)

@@ -15,6 +15,13 @@
       "when": 1752612248168,
       "tag": "0001_massive_union_jack",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1753825809732,
+      "tag": "0002_previous_wasp",
+      "breakpoints": true
     }
   ]
 }

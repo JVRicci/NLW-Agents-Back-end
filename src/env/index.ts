@@ -12,7 +12,8 @@ const envSchema= z.object({
     NODE_ENV: z.enum(["develop"])
         .default("develop"),
     DATABASE_URL: z.string().url().startsWith('postgresql://'),
-    PORT : z.coerce.number().default(3333)
+    PORT : z.coerce.number().default(3333),
+    GEMINI_APIKEY : z.string()
 })
 
 export const _env = envSchema.safeParse(process.env)
