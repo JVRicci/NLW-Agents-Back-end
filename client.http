@@ -29,3 +29,15 @@ Content-Type: application/json
 # Get question from froom
 # @name getRoomQuestions
 GET {{baseUrl}}/rooms/{{roomId}}/questions
+
+###
+
+# Create question
+# @name createQuestion
+
+POST {{baseUrl}}/rooms/6f05315b-1442-4bfa-af46-cf39d951f59e/audio
+Content-Type: application/json
+
+{
+    "question": "O que ser react?"
+}
